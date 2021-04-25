@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../public/css/formLogin.css"/>
+  </head>
+
+  <body>
+    <div class="main">
+      <form action="" method="POST" class="form" id="form-1">
+        <h3 class="heading">Đăng nhập</h3>
+        <p class="desc">Đăng nhập với email của bạn ❤️</p>
+
+        <div class="form-group">
+          <label for="username" class="form-label">Email</label>
+          <input
+            id="username"
+            name="username"
+            type="text"
+            placeholder="Nhập email của bạn"
+            class="form-control"
+          />
+          <span class="form-message"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="form-label">Mật khẩu</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Nhập mật khẩu"
+            class="form-control"
+          />
+          <span class="form-message"></span>
+        </div>
+
+        <button type="button" class="form-submit" onclick="login()">
+          Đăng nhập
+        </button>
+        <div class="spacer"></div>
+        <p class="desc">Chưa có mật khẩu?
+            <a href="./registration.html">Đăng ký tại đây!</a>
+        </p>
+      </form>
+      
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyCRk6gNo0RetN2pU1UACs04C7jkyKaZGZM",
+        authDomain: "qltt-c1092.firebaseapp.com",
+        projectId: "qltt-c1092",
+        storageBucket: "qltt-c1092.appspot.com",
+        messagingSenderId: "349815988435",
+        appId: "1:349815988435:web:2acd54172063d58be33426",
+        measurementId: "G-308JSCTM8F",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+
+    <script src="../public/js/login.js"></script>
+  </body>
+</html>

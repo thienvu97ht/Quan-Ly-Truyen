@@ -1,0 +1,39 @@
+{
+  "sinhVien": [
+    {
+      "name": "Trịnh Tuấn Phong",
+      "email": "phonght@yahoo.com",
+      "phone": "0123456789",
+      "gender": "Nam",
+      "id": 1
+    },
+    {
+      "name": "Dương Loan",
+      "email": "duongloan156@yahoo.com",
+      "phone": "0938688283",
+      "gender": "Nữ",
+      "id": 2
+    },
+    {
+      "name": "Duong Dinh Thien Vu",
+      "email": "thien.vu97ht123@gmail.com",
+      "phone": "0981877669",
+      "gender": "Nam",
+      "id": 3
+    },
+    {
+      "name": "Trần Anh Tuấn",
+      "email": "tuantran@yahoo.com",
+      "phone": "0981818181",
+      "gender": "Nam",
+      "id": 4
+    },
+    {
+      "name": "Nguyễn Văn Hạnh",
+      "email": "hanhhoadz@yahoo.com",
+      "phone": "0981241231",
+      "gender": "Nam",
+      "id": 5
+    }
+  ]
+}

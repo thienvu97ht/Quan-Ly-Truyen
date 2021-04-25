@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang Chủ</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../public/css/form.css" />
+    <link rel="stylesheet" href="../public/css/table.css" />
+    <link rel="stylesheet" href="../public/css/style.css" />
+  </head>
+
+  <body>
+    <label for="add-table" class="overlay" onclick="hideForm()"></label>
+
+    <div class="nav-bar">
+      <div class="nav-bar-container">
+        <p class="hello-username">Xin chào</p>
+        <i class="icon-dropdown fas fa-chevron-down">
+          <ul class="dropdown-menu-list">
+            <li class="dropdown-menu-item">Thông tin tài khoản</li>
+            <li class="dropdown-menu-item">Đổi mật khẩu</li>
+            <li class="dropdown-menu-item" onclick="signOut()">Đăng xuất</li>
+          </ul>
+        </i>
+      </div>
+    </div>
+    <div class="container-lg">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-8">
+              <h2>Quản lý sinh viên</h2>
+            </div>
+            <div class="col-sm-4">
+              <button
+                for="add-table"
+                class="btn btn-info add-new"
+                onclick="showForm()"
+              >
+                Thêm mới
+              </button>
+            </div>
+          </div>
+        </div>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Họ và tên</th>
+              <th>Email</th>
+              <th>Số điện thoại</th>
+              <th>Giới tính</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody id="list-sv"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="main-form">
+      <form action="" method="POST" class="form" id="form-1">
+        <h3 class="heading">Thêm sinh viên</h3>
+
+        <div class="spacer"></div>
+
+        <div class="form-group">
+          <label for="name" class="form-label">Tên đầy đủ</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="VD: Dương Vũ"
+            class="form-control"
+          />
+          <span class="form-message"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="text"
+            placeholder="VD: email@domain.com"
+            class="form-control"
+          />
+          <span class="form-message"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="phone" class="form-label">Số điện thoại</label>
+          <input
+            id="phone"
+            name="phone"
+            type="text"
+            placeholder="VD: 0981234567"
+            class="form-control"
+          />
+          <span class="form-message"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="" class="form-label">Giới tính</label>
+          <div class="radio-form">
+            <div class="radio-item">
+              <input
+                name="gender"
+                id="male"
+                type="radio"
+                value="Nam"
+                class="form-control"
+              />
+              <label for="male">Nam</label>
+            </div>
+            <div class="radio-item">
+              <input
+                name="gender"
+                id="female"
+                type="radio"
+                value="Nữ"
+                class="form-control"
+              />
+              <label for="female">Nữ</label>
+            </div>
+          </div>
+          <span class="form-message"></span>
+        </div>
+
+        <button
+          id="create"
+          type="button"
+          class="form-submit"
+          onclick="handleCreateForm()"
+        >
+          Tạo mới
+        </button>
+        <button id="update" type="button" class="form-submit">Update</button>
+      </form>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyCRk6gNo0RetN2pU1UACs04C7jkyKaZGZM",
+        authDomain: "qltt-c1092.firebaseapp.com",
+        projectId: "qltt-c1092",
+        storageBucket: "qltt-c1092.appspot.com",
+        messagingSenderId: "349815988435",
+        appId: "1:349815988435:web:2acd54172063d58be33426",
+        measurementId: "G-308JSCTM8F",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+
+    <script src="../public/js/main.js"></script>
+    <script src="../public/js/loginSuccess.js"></script>
+  </body>
+</html>
