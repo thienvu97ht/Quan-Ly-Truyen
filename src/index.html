@@ -37,7 +37,7 @@
         <i class="icon-dropdown fas fa-chevron-down">
           <ul class="dropdown-menu-list">
             <li class="dropdown-menu-item">Thông tin tài khoản</li>
-            <li class="dropdown-menu-item">Đổi mật khẩu</li>
+            <li class="dropdown-menu-item" onclick="showForm2()">Đổi mật khẩu</li>
             <li class="dropdown-menu-item" onclick="signOut()">Đăng xuất</li>
           </ul>
         </i>
@@ -154,6 +154,28 @@
           Tạo mới
         </button>
         <button id="update" type="button" class="form-submit">Update</button>
+      </form>
+    </div>
+
+    <div class="form-update-pass">
+      <form action="" method="POST" class="form" id="form-2">
+        <h3 class="heading">Đổi mật khẩu</h3>
+        <div class="spacer"></div>
+        <div class="form-group">
+          <label for="newpass" class="form-label">Mật khẩu mới</label>
+          <input
+            id="newpass"
+            name="newpass"
+            type="text"
+            placeholder="Nhập mật khẩu mới"
+            class="form-control"
+          />
+          <span class="form-message"></span>
+        </div>
+
+        <button type="button" class="form-submit" onclick="changePass()">
+          Thay đổi mật khẩu
+        </button>
       </form>
     </div>
 

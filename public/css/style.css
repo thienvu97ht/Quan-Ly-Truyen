@@ -9,7 +9,7 @@
     transition: all linear 0.3s;
 }
 
-.main-form {
+.main-form, .form-update-pass {
     position: fixed;
     z-index: 1;
     width: 360px;

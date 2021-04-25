@@ -1,6 +1,7 @@
 var sinhVienApi = "http://localhost:3000/sinhVien";
 var overlayElement = document.querySelector(".overlay");
 var formElement = document.querySelector(".main-form");
+var formChangePass = document.querySelector(".form-update-pass");
 
 var createBtn = document.querySelector("#create");
 var btnUpdate = document.querySelector("#update");
@@ -14,6 +15,7 @@ var nuInputElement = document.querySelector("#female");
 function start() {
   overlayElement.style.display = "none";
   formElement.style.display = "none";
+  formChangePass.style.display = "none";
   document.querySelector("#update").style.display = "none";
   getSv(function (data) {
     renderSinhVien(data);
@@ -206,10 +208,12 @@ function showForm() {
 function hideForm() {
   if (
     overlayElement.style.display == "block" ||
-    formElement.style.display == "block"
+    formElement.style.display == "block" ||
+    formChangePass.style.display == "block"
   ) {
     overlayElement.style.display = "none";
     formElement.style.display = "none";
+    formChangePass.style.display = "none";
 
     nameInputElement.value = "";
     emailInputElement.value = "";
@@ -220,4 +224,44 @@ function hideForm() {
     createBtn.style.display = "block";
     btnUpdate.style.display = "none";
   }
+}
+
+function showForm2() {
+  if (
+    overlayElement.style.display == "none" ||
+    formChangePass.style.display == "none"
+  ) {
+    overlayElement.style.display = "block";
+    formChangePass.style.display = "block";
+  }
+}
+
+function hideForm2() {
+  if (
+    overlayElement.style.display == "block" ||
+    formChangePass.style.display == "block"
+  ) {
+    overlayElement.style.display = "none";
+    formChangePass.style.display = "none";
+  }
+}
+
+/* Thay đổi mật khẩu */
+function changePass() {
+  var newPass = document.querySelector("#newpass").value;
+  var user = firebase.auth().currentUser;
+
+  console.log(newPass)
+  user
+    .updatePassword(newPass)
+    .then(function () {
+      // Update successful.
+      hideForm2();
+      window.alert('Thay đổi mật khẩu thành công!');
+    })
+    .catch(function (error) {
+      // An error happened.
+      hideForm2();
+      window.alert('Thay đổi mật khẩu thất bại!');
+    });
 }
